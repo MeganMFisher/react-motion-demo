@@ -31,6 +31,7 @@ You have to pass in a number to the spring. React motion does some physics calcu
 
 **Optional**
 - defaultStyle props
+- onRest 
 
 
 ## Transition Motion Component:
@@ -41,16 +42,14 @@ You have to pass in a number to the spring. React motion does some physics calcu
 Takes willLeave, willEnter, and styles as the attributes as well as a function inbetween the component tags which feeds into this.props.children. 
 
 **Required**
-- style props which is an array
+- styles props which is an array
 - Children passed to this component should be a function
-- Must return one React element to render
 
 **Optional**
-- defaultStyle props
+- defaultStyles props
 - willLeave props
 - didLeave props
 - willEnter props
-- 
 
 
 
@@ -61,19 +60,42 @@ Takes willLeave, willEnter, and styles as the attributes as well as a function i
 
 defaultStyles is a required attribute for the staggeredMotion component.
 
+ **Required**
+- styles props which is an array
+- Children passed to this component should be a function
+
+**Optional**
+- defaultStyles props
 
 
 
+## Spring(): 
 
-# Install: 
+Used in conjunction with the components above. Specifies the how to animate to the destination value, e.g. spring(10, {stiffness: 100, damping: 20}) means "animate to value 10, with a spring of stiffness 100 and damping 20".
 
-In your terminal run the following to create your react app and to install react-motion: 
 
-`Create-react-app app` 
+## Spring Presets: 
+
+  noWobble: {stiffness: 170, damping: 26}: The default, if nothing provided
+  gentle: {stiffness: 120, damping: 14}
+  wobbly: {stiffness: 180, damping: 12}
+  stiff: {stiffness: 210, damping: 20}
+
+
+
+# Installation: 
+
+In your terminal run the following to install react-motion: 
 
 `npm install --save react-motion`
 
-cd into your create-react-app folder and run `npm start`. Clean out the app.js file so there is only a single div in your return within your render. 
+
+
+<!-- ## Import: 
+
+For this demo in your component import staggeredMotion, presets, and spring from react-motion. 
+
+`import {StaggeredMotion, spring, presets} from 'react-motion';` -->
 
 
 
@@ -87,3 +109,5 @@ cd into your create-react-app folder and run `npm start`. Clean out the app.js f
 - https://www.npmjs.com/package/react-motion 
 - https://medium.com/@bjorn.holdt/react-motion-101-springs-336f4f29d95a
 - https://www.kirupa.com/react/smooth_sliding_menu_react_motion.htm
+- http://chenglou.github.io/react-motion/demos/demo5-spring-parameters-chooser/
+- http://underscorejs.org/docs/underscore.html
