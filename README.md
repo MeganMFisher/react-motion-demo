@@ -14,24 +14,17 @@ It exports 3 main components, Motion, StaggeredMotion and TransitionMotion.
 - Children passed to this component should be a function that should render a component. That function’s argument is the style that should be used to render that component at that point in time.
 - You can control the initial state with defaultStyle prop
 
-```
-  <Motion defaultStyle={{ opacity: 0 }} style={{ opacity: spring(1) }}>
-    { (style) => <div style={style}>Can you see me?</div> }
- </Motion>
-```
 
 The motion component requires a styles attribute as well as a function inbetween the component tags which feeds into this.props.children. 
 
-You have to pass in a number to the spring. React motion does some physics calculations or react motion magic.
 
 **Required**
 - style props
 - Children passed to this component should be a function
-- Must return one React element to render
 
 **Optional**
 - defaultStyle props
-- onRest 
+- onRest : A callback that fires when the animation comes to a rest.
 
 
 ## Transition Motion Component:
@@ -42,14 +35,14 @@ You have to pass in a number to the spring. React motion does some physics calcu
 Takes willLeave, willEnter, and styles as the attributes as well as a function inbetween the component tags which feeds into this.props.children. 
 
 **Required**
-- styles props which is an array
+- styles props 
 - Children passed to this component should be a function
 
 **Optional**
 - defaultStyles props
-- willLeave props
-- didLeave props
-- willEnter props
+- willLeave props : Styles that the component will be transitioned to before unmounting.
+- didLeave props : Styles that will be removed after the finished transition.
+- willEnter props : This is like the defaultStyle props, the initial style before transitioning. 
 
 
 
@@ -61,7 +54,7 @@ Takes willLeave, willEnter, and styles as the attributes as well as a function i
 defaultStyles is a required attribute for the staggeredMotion component.
 
  **Required**
-- styles props which is an array
+- styles props 
 - Children passed to this component should be a function
 
 **Optional**
@@ -72,6 +65,8 @@ defaultStyles is a required attribute for the staggeredMotion component.
 ## Spring(): 
 
 Used in conjunction with the components above. Specifies the how to animate to the destination value, e.g. spring(10, {stiffness: 100, damping: 20}) means "animate to value 10, with a spring of stiffness 100 and damping 20".
+
+You have to pass in a number to the spring as the first parameter. React motion does some physics calculations or react motion magic.
 
 
 ## Spring Presets: 
