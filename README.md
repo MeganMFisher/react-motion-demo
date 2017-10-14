@@ -2,12 +2,12 @@
 
 ## What is React Motion?
 
-React Motion allows you to animate the style prop of an element. 
+React Motion makes animation easy using physics and allows you to animate the style prop of an element. 
 
-React Motion exports 3 main components, Motion, StaggeredMotion and TransitionMotion.
+It exports 3 main components, Motion, StaggeredMotion and TransitionMotion.
 
 
-## Motion:
+## Motion Component:
 `<Motion />`
 
 - Allows you to animate components within a page between style state.
@@ -20,22 +20,46 @@ React Motion exports 3 main components, Motion, StaggeredMotion and TransitionMo
  </Motion>
 ```
 
+The motion component requires a styles attribute as well as a function inbetween the component tags which feeds into this.props.children. 
 
-## Transition Motion:
+You have to pass in a number to the spring. React motion does some physics calculations or react motion magic.
+
+**Required**
+- style props
+- Children passed to this component should be a function
+- Must return one React element to render
+
+**Optional**
+- defaultStyle props
+
+
+## Transition Motion Component:
 `<TransitionMotion />`
 
 - Helps you to do mounting and unmounting animation.
 
+Takes willLeave, willEnter, and styles as the attributes as well as a function inbetween the component tags which feeds into this.props.children. 
+
+**Required**
+- style props which is an array
+- Children passed to this component should be a function
+- Must return one React element to render
+
+**Optional**
+- defaultStyle props
+- willLeave props
+- didLeave props
+- willEnter props
+- 
 
 
 
-
-## Staggered Motion: 
+## Staggered Motion Component: 
 `<StaggeredMotion />`
 
 - Animates a collection of (fixed length) items whose values depend on each other, creating a natural, springy, "staggering" effect like so. This is preferred over hard-coding a delay for an array of Motions to achieve a similar (but less natural-looking) effect.
 
-
+defaultStyles is a required attribute for the staggeredMotion component.
 
 
 
@@ -49,7 +73,7 @@ In your terminal run the following to create your react app and to install react
 
 `npm install --save react-motion`
 
-cd into your create-react-app folder and run `npm start`
+cd into your create-react-app folder and run `npm start`. Clean out the app.js file so there is only a single div in your return within your render. 
 
 
 
