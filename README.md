@@ -14,9 +14,7 @@ It exports 3 main components, Motion, StaggeredMotion and TransitionMotion.
 - Children passed to this component should be a function that should render a component. That function’s argument is the style that should be used to render that component at that point in time.
 - You can control the initial state with defaultStyle prop
 
-
 The motion component requires a styles attribute as well as a function inbetween the component tags which feeds into this.props.children. 
-
 
 **Required**
 - style props
@@ -25,6 +23,7 @@ The motion component requires a styles attribute as well as a function inbetween
 **Optional**
 - defaultStyle props
 - onRest : A callback that fires when the animation comes to a rest.
+
 
 
 ## Transition Motion Component:
@@ -50,8 +49,6 @@ Takes willLeave, willEnter, and styles as the attributes as well as a function i
 `<StaggeredMotion />`
 
 - Animates a collection of (fixed length) items whose values depend on each other, creating a natural, springy, "staggering" effect like so. This is preferred over hard-coding a delay for an array of Motions to achieve a similar (but less natural-looking) effect.
-
-defaultStyles is a required attribute for the staggeredMotion component.
 
  **Required**
 - styles props 
@@ -85,6 +82,11 @@ In your terminal run the following to install react-motion:
 `npm install --save react-motion`
 
 
+## Definitions to know: 
+
+*Arthimetic Progression:* A sequence of numbers such that the difference of any two successive members is a constant. For example, the sequence 1, 2, 3, 4, ... is an arithmetic progression with common difference 1. 
+
+*Interpolate:* Insert (something of a different nature) into something else. "Illustrations were interpolated in the text"
 
 
 
