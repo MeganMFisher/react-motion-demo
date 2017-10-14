@@ -32,6 +32,7 @@ export default class Animation extends Component {
       return i === 0 ? this.state : {
           x: spring(prevStyles[i - 1].x, presets.gentle),
           y: spring(prevStyles[i - 1].y, presets.gentle),
+          //If the index is equal to 0 return this.state(our initial starting point) otherwise set x to equal the invocation of spring with the first parameter the x property on the staggered item with the current index of minus 1. Then set the stiffness and damping to be a build in preset of gentle.
         };
     });
     return endValue;
@@ -40,14 +41,17 @@ export default class Animation extends Component {
   render() {
     return (
       <StaggeredMotion
-        defaultStyles={_.range(8).map(() => ({x: 0, y: 0}))} //Determines how many staggers you have. _.range => Generates an integer Array containing an arithmetic progression. An arithmetic progression is a sequence of numbers such that the difference of any two successive members is a constant. For example, the sequence 1, 2, 3, 4, ... is an arithmetic progression with common difference 1. The .map gives each of them a starting location. Without it you will only see the first stagger.
+        defaultStyles={_.range(8).map(() => ({x: 0, y: 0}))} //Determines how many staggers you have. _.range => Generates an integer Array containing an arithmetic progression. An arithmetic progression is a sequence of numbers such that the difference of any two successive members is a constant. For example, the sequence 1, 2, 3, 4, ... is an arithmetic progression with common difference 1. The .map gives each of them a starting location. Without it you will only see the first stagger. 
+
         styles={this.getStyles}> 
         
 
         {/* Required function passed as children to this function */}
+        {/* Accepts the array of interpolated styles e.g. [{x: 5, y: 10}, {x: 6.4, y: 20}, {x: 8.1, y: 4}] which in this app comes from getStyles*/}
         {circles =>
           <div className="container">
             {circles.map(({x, y}, i) =>
+            //Maps over the interpolated styles.
               <div
                 key={i}
                 className={`circles circle-${i}`}

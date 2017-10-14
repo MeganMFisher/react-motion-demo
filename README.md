@@ -91,15 +91,6 @@ In your terminal run the following to install react-motion:
 
 
 
-<!-- ## Import: 
-
-For this demo in your component import staggeredMotion, presets, and spring from react-motion. 
-
-`import {StaggeredMotion, spring, presets} from 'react-motion';` -->
-
-
-
-
 
 
 # Resources: 
