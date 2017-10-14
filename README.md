@@ -111,3 +111,5 @@ For this demo in your component import staggeredMotion, presets, and spring from
 - https://www.kirupa.com/react/smooth_sliding_menu_react_motion.htm
 - http://chenglou.github.io/react-motion/demos/demo5-spring-parameters-chooser/
 - http://underscorejs.org/docs/underscore.html
+- https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageX
+- https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY

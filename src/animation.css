@@ -3,12 +3,11 @@
 .container {
     width: 100%;
     height: 100vh;
-    position: absolute;
     background: url('http://iambkinc.org/wp-content/uploads/2014/04/Background-landscape.png');
     background-size: cover;
   }
   .circles {
-    border-radius: 99px;
+    border-radius: 50%;
     background-color: #eee;
     width: 50px;
     height: 50px;
